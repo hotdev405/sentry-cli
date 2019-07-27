@@ -94,13 +94,13 @@ pub fn get_appcenter_deployment_history(
     };
 
     let output = Command::new(appcenter_bin)
-        .arg("codepush")
+        .arg("code-push")
         .arg("deployment")
         .arg("history")
         .arg(deployment)
         .arg("--app")
         .arg(app)
-        .arg("--output")
+        .arg("--format")
         .arg("json")
         .output()
         .map_err(|e| match e.kind() {
